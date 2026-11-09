@@ -1,0 +1,11 @@
+<!doctype html><meta charset="utf-8"><title>Tesla OAuth callback</title>
+<style>body{font-family:system-ui;margin:2rem;max-width:40rem}code{word-break:break-all;background:#f3f3f3;padding:.5rem;display:block}</style>
+<h2>Tesla OAuth callback</h2>
+<p>Authorization code (copy it to the token exchange):</p>
+<code id="code"></code>
+<p>state: <span id="state"></span></p>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('code').textContent=q.get('code')||'(no code in URL)';
+document.getElementById('state').textContent=q.get('state')||'';
+</script>
